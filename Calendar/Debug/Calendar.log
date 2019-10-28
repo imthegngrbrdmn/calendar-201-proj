@@ -1,2 +1,3 @@
-﻿  help.cpp
-  Calendar.vcxproj -> D:\C++ work\Project\Calendar\Calendar\Debug\Calendar.exe
+﻿  Main.cpp
+Main.obj : error LNK2019: unresolved external symbol "void __cdecl help(class std::vector<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::allocator<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > > > &)" (?help@@YAXAAV?$vector@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$allocator@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@@std@@@Z) referenced in function _main
+D:\C++ work\Project\Calendar\Calendar\Debug\Calendar.exe : fatal error LNK1120: 1 unresolved externals

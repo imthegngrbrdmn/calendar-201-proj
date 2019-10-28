@@ -9,7 +9,7 @@ struct event
 	int date;
 	int time;
 	std::string title;
-}
+};
 
 /*
 input: vector of strings that will be printed by main
