@@ -126,7 +126,7 @@
     <ClInclude Include="options.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="help.cpp" />
+    <ClCompile Include="options.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
