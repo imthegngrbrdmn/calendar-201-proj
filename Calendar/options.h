@@ -31,3 +31,11 @@ void listEvents(std::vector<event>& events);
 The eventRange function will take a list of events and return all the events that are happening between those dates.
 */
 void eventRange(std::vector<event>& events,int beginDate,int endDate);
+
+/*
+	Input: Day, month and year that the user wants to know.
+	Output: The corresponding weekday/weekend for the date the user entered.
+	The Weekday function will take integer arguments of day, month and year.
+*/
+int Weekday(int d, int m, int y);
+
