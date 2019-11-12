@@ -17,11 +17,11 @@ void eventRange(std::vector<event>& events, int beginDate, int endDate)
 	//FIX ME: make me do stuff
 }
 
-int Weekday(int d, int m, int y)
+int Weekday(int d, int m, int y) //Tomohiko Sakamoto's Algorithm to calculate the day of the week from a given date. 
 {
-	static int x[] = { 0, 3, 2, 5, 0, 3,
-					   5, 1, 4, 6, 2, 4 };
+	int t[] = { 0, 3, 2, 5, 0, 3,
+			    5, 1, 4, 6, 2, 4 };
 	y -= m < 3;
 	return (y + y / 4 - y / 100 +
-		y / 400 + x[m - 1] + d) % 7; 
+	y / 400 + t[m - 1] + d) % 7; 
 }
