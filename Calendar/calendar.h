@@ -1,3 +1,3 @@
 #include <string>
 
-void calendarPrint(std::string month,int firstDay);
+void calendarPrint(int month, int year, int daysInMonth);

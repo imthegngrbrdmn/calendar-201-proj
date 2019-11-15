@@ -22,6 +22,6 @@ int main(int argc, char** argv)
 	std::cin >> year;
 
 	std::cout << Weekday(day, month, year);*/
-	calendarPrint("August",3);
+	calendarPrint(1,2028,31);
 	return 0;
 }
