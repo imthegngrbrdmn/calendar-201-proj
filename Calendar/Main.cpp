@@ -7,6 +7,7 @@ int year = 0;
 
 int main(int argc, char** argv)
 {
+	/*
 	std::vector<std::string> helpList;
 	help(helpList);
 	std::cout << "Here are your options: \n";
@@ -20,6 +21,7 @@ int main(int argc, char** argv)
 	std::cin >> month;
 	std::cin >> year;
 
-	std::cout << Weekday(day, month, year);
+	std::cout << Weekday(day, month, year);*/
+	calendarPrint("August",3);
 	return 0;
 }
