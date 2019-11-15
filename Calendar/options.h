@@ -37,5 +37,5 @@ void eventRange(std::vector<event>& events,int beginDate,int endDate);
 	Output: The corresponding weekday/weekend for the date the user entered.
 	The Weekday function will take integer arguments of day, month and year.
 */
-int Weekday(int d, int m, int y);
+std::string Weekday (int d, int m, int y);
 
