@@ -126,6 +126,7 @@
     <ClInclude Include="options.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="calendar.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="options.cpp" />
   </ItemGroup>

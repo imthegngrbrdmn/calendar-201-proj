@@ -8,12 +8,13 @@ int main(int argc, char** argv)
 {
 	std::vector<std::string> helpList;
 	help(helpList);
-	std::cout << "Here are your options";
-	for(std::string str : printlist)
+	std::cout << "Here are your options: \n";
+
+	for(std::string str : helpList)
 	{
-		std::cout << str;
+		std::cout << str << "\n";
 	}
-	std::cout << "Enter a date: (Format: d/m/yyyy): " << "\n";
+	std::cout << "Enter a date: (Format: dd/mm/yyyy): " << "\n";
 	std::cin >> day;
 	std::cin >> month;
 	std::cin >> year;
