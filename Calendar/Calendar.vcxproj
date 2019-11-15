@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="calendar.h" />
     <ClInclude Include="options.h" />
   </ItemGroup>
   <ItemGroup>

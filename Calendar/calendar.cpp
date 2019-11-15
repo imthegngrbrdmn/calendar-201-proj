@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include"calendar.h"
+
 void calendarPrint(std::string month, int firstDay)
 {
 	std::cout << month << "\n";
