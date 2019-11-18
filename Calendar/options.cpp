@@ -10,7 +10,6 @@ void help(std::vector<std::string>& optionlist)
 
 void listEvents(std::vector<event>& events)
 {
-
 	//FIX ME: make me do stuff
 }
 
