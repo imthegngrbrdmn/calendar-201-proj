@@ -10,13 +10,12 @@ void help(std::vector<std::string>& optionlist)
 
 void listEvents(std::vector<event>& events)
 {
+
 	//FIX ME: make me do stuff
 }
 
 void eventRange(std::vector<event>& events, int beginDate, int endDate)
 {
-	//std::
-	//events.push_back(beginDate);
 	//FIX ME: make me do stuff
 }
 

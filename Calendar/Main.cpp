@@ -20,26 +20,35 @@ int main(int argc, char** argv)
 		std::cout << str << "\n";
 	}
 
-	std::cout << "What would you like to do? \n";
-	std::getline(std::cin, input);
-
-	if (input == "ListEvents")
+	while(true)
 	{
-		//listEvents();
-	}
-	else if (input == "EventRange")
-	{
+		std::cout << "What would you like to do? \n";
+		std::getline(std::cin, input);
 
-	}
-	else if (input == "Weekday")
-	{
-		std::cout << "Enter a date: (Format: dd/mm/yyyy): " << "\n";
-		std::cin >> day;
-		std::cin >> month;
-		std::cin >> year;
+		if (input == "ListEvents")
+		{
+			//listEvents();
+		}
+		else if (input == "EventRange")
+		{
+			//eventRange();
+		}
+		else if (input == "Weekday")
+		{
+			std::cout << "Enter a date: (Format: dd/mm/yyyy): " << "\n";
+			std::cin >> day;
+			std::cin >> month;
+			std::cin >> year;
 
-		std::cout << "Day is: " << Weekday(day, month, year);
+			std::cout << "Day is: " << Weekday(day, month, year) << "\n";
+		}
+		else if (input == "Quit")
+		{
+			std::cout << "Bye! \n";
+			break;
+		}
 	}
+	return 0;
 
 
 	//std::cout << Weekday(day, month, year);
