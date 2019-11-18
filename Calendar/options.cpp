@@ -1,4 +1,5 @@
 #include"options.h"
+
 void help(std::vector<std::string>& optionlist)
 {
 	optionlist.push_back("Help");
@@ -9,6 +10,10 @@ void help(std::vector<std::string>& optionlist)
 
 void listEvents(std::vector<event>& events)
 {
+	for (int i = 0; i <= events.size(); i++)
+	{
+		std::cout << "List of events are: " << i << std::endl;
+	}
 	//FIX ME: make me do stuff
 }
 
