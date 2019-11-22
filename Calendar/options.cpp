@@ -1,5 +1,15 @@
 #include"options.h"
 
+void addEvent(std::map<int,event>& events)
+{
+	int date,int time, std::string name;
+	std::cout<<"What is the date you would like to add an event on? (in yyyymmdd format)\n";
+	std::cin>>date;
+	std::cout<<"What is the time of the event? (in hhmm format)\n";
+	std::cin>>time;
+	std::cout<<"What is the event?\n";
+	std::cin>>name;
+	events[date]=event(time,name);
 void help(std::vector<std::string>& optionlist)
 {
 	for (std::string str : optionlist)
