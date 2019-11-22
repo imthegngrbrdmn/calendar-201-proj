@@ -2,24 +2,31 @@
 
 void help(std::vector<std::string>& optionlist)
 {
-	optionlist.push_back("Help");
-	optionlist.push_back("ListEvents");
-	optionlist.push_back("EventRange -begin_end");
-	optionlist.push_back("Weekday");
+	for (std::string str : optionlist)
+	{
+		std::cout << str << "\n";
+	}
 }
 
-void listEvents(std::vector<event>& events)
+void listEvents(std::map<int,event>& events)
+{
+	//int year; int month; int day;
+	for (auto eve : events)
+	{
+		//std::cout << eve.first%10^ << " :: " << eve.time << " " << eve.title;
+	}
+}
+
+void eventRange(std::map<int,event>& events, int beginDate, int endDate)
 {
 	//FIX ME: make me do stuff
 }
 
-void eventRange(std::vector<event>& events, int beginDate, int endDate)
+std::string Weekday(std::string date) //Tomohiko Sakamoto's Algorithm to calculate the day of the week from a given date. 
 {
-	//FIX ME: make me do stuff
-}
-
-std::string Weekday(int d, int m, int y) //Tomohiko Sakamoto's Algorithm to calculate the day of the week from a given date. 
-{
+	int y = stoi(date.substr(6, 10));
+	int m = stoi(date.substr(3, 5));
+	int d = stoi(date.substr(0, 2));
 	int t[] = { 0, 3, 2, 5, 0, 3,
 			    5, 1, 4, 6, 2, 4 };
 	y -= m < 3;
