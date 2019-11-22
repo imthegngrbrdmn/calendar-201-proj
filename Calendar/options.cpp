@@ -10,10 +10,14 @@ void help(std::vector<std::string>& optionlist)
 
 void listEvents(std::map<int,event>& events)
 {
-	//int year; int month; int day;
+	int year; int month; int day;
 	for (auto eve : events)
 	{
-		//std::cout << eve.first%10^ << " :: " << eve.time << " " << eve.title;
+		int date=eve.first;
+		year=date/10000;
+		month(date/100)%100;
+		day=date%100;
+		std::cout << month << "/" << day << "/" << year << "\t" << eve.second.time << "\t" << eve.second.title << "\n";
 	}
 }
 
