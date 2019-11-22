@@ -23,7 +23,17 @@ void listEvents(std::map<int,event>& events)
 
 void eventRange(std::map<int,event>& events, int beginDate, int endDate)
 {
-	//FIX ME: make me do stuff
+	for (auto eve: events)
+	{
+		if(eve.first>=beginDate&&eve.first<=endDate)
+		{
+			int date=eve.first;
+			year=date/10000;
+			month(date/100)%100;
+			day=date%100;
+			std::cout << month << "/" << day << "/" << year << "\t" << eve.second.time << "\t" << eve.second.title << "\n";
+		}
+	}
 }
 
 std::string Weekday(std::string date) //Tomohiko Sakamoto's Algorithm to calculate the day of the week from a given date. 
