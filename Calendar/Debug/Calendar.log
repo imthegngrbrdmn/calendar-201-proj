@@ -1,4 +1,2 @@
-﻿  options.cpp
-  D:\Users\maarnold7\source\repos\imthegngrbrdmn\calendar-201-proj\Calendar\options.cpp(60) : warning C4715: 'Weekday': not all control paths return a value
-Main.obj : error LNK2019: unresolved external symbol "void __cdecl addEvent(class std::map<int,struct event,struct std::less<int>,class std::allocator<struct std::pair<int const ,struct event> > > &)" (?addEvent@@YAXAAV?$map@HUevent@@U?$less@H@std@@V?$allocator@U?$pair@$$CBHUevent@@@std@@@3@@std@@@Z) referenced in function _main
-D:\Users\maarnold7\source\repos\imthegngrbrdmn\calendar-201-proj\Calendar\Debug\Calendar.exe : fatal error LNK1120: 1 unresolved externals
+﻿  calendar.cpp
+  Calendar.vcxproj -> D:\C++ work\Project\Calendar\calendar-201-proj\Calendar\Debug\Calendar.exe

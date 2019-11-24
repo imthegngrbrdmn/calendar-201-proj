@@ -1,15 +1,17 @@
 #include"options.h"
 
-void addEvent(std::map<int,event>& events)
+void addEvent(std::map<int, event>& events)
 {
-	int date,int time, std::string name;
-	std::cout<<"What is the date you would like to add an event on? (in yyyymmdd format)\n";
-	std::cin>>date;
-	std::cout<<"What is the time of the event? (in hhmm format)\n";
-	std::cin>>time;
-	std::cout<<"What is the event?\n";
-	std::cin>>name;
-	events[date]=event(time,name);
+	std::string date;int time; std::string name;
+	std::cout << "What is the date you would like to add an event on? (in dd/mm/yyyy format)\n";
+	std::cin >> date;
+	int dateInt = stoi(date.substr(0, 2))+ stoi(date.substr(3, 5))*100+stoi(date.substr(6, 10))*10000;
+	std::cout << "What is the time of the event? (in hhmm format)\n";
+	std::cin >> time;
+	std::cout << "What is the event?\n";
+	std::cin >> name;
+	events[dateInt] = { time,name };
+}
 void help(std::vector<std::string>& optionlist)
 {
 	for (std::string str : optionlist)
@@ -25,7 +27,7 @@ void listEvents(std::map<int,event>& events)
 	{
 		int date=eve.first;
 		year=date/10000;
-		month(date/100)%100;
+		month=(date/100)%100;
 		day=date%100;
 		std::cout << month << "/" << day << "/" << year << "\t" << eve.second.time << "\t" << eve.second.title << "\n";
 	}
@@ -38,9 +40,9 @@ void eventRange(std::map<int,event>& events, int beginDate, int endDate)
 		if(eve.first>=beginDate&&eve.first<=endDate)
 		{
 			int date=eve.first;
-			year=date/10000;
-			month(date/100)%100;
-			day=date%100;
+			int year=date/10000;
+			int month=(date/100)%100;
+			int day=date%100;
 			std::cout << month << "/" << day << "/" << year << "\t" << eve.second.time << "\t" << eve.second.title << "\n";
 		}
 	}

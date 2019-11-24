@@ -1,13 +1,12 @@
-#include <iostream>
-#include <string>
-#include <vector>
 #include"calendar.h"
-#include"options.h"
+#include "options.h"
 
 std::vector<std::string> days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 std::vector<std::string> months = { "January","February","March","April","May","June","July","August","September","October","November","December" };
-void calendarPrint(int month, int year,int daysInMonth)
+std::vector<int> daysInMonths = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+void calendarPrint(int month, int year)
 {
+	int daysInMonth = daysInMonths[month-1];
 	int m = month;
 	int y = year;
 	int d = 1;
