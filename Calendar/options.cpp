@@ -1,5 +1,6 @@
 #include"options.h"
 
+//Allows user to add event to the calendar. 
 void addEvent(std::map<int, event>& events)
 {
 	std::string date;int time; std::string name;
@@ -12,6 +13,8 @@ void addEvent(std::map<int, event>& events)
 	std::cin >> name;
 	events[dateInt] = { time,name };
 }
+
+//Displays options the user can choose from. 
 void help(std::vector<std::string>& optionlist)
 {
 	for (std::string str : optionlist)
@@ -20,6 +23,7 @@ void help(std::vector<std::string>& optionlist)
 	}
 }
 
+//Lists all events saved in the calendar.
 void listEvents(std::map<int,event>& events)
 {
 	int year; int month; int day;
@@ -33,6 +37,7 @@ void listEvents(std::map<int,event>& events)
 	}
 }
 
+//Lists all events within a range on the calendar. 
 void eventRange(std::map<int,event>& events, int beginDate, int endDate)
 {
 	for (auto eve: events)
@@ -48,7 +53,8 @@ void eventRange(std::map<int,event>& events, int beginDate, int endDate)
 	}
 }
 
-std::string Weekday(std::string date) //Tomohiko Sakamoto's Algorithm to calculate the day of the week from a given date. 
+//Tomohiko Sakamoto's Algorithm to calculate the day of the week from a given date.
+std::string Weekday(std::string date) 
 {
 	int y = stoi(date.substr(6, 10));
 	int m = stoi(date.substr(3, 5));
@@ -59,7 +65,8 @@ std::string Weekday(std::string date) //Tomohiko Sakamoto's Algorithm to calcula
 	int day = (y + y / 4 - y / 100 +
 	y / 400 + t[m - 1] + d) % 7; 
 
-	switch (day) //Generates a string corresponding to the day instead of a number.
+	//Generates a string corresponding to the day instead of a number.
+	switch (day) 
 	{
 	case 0: day = 0;
 		return "Sunday";

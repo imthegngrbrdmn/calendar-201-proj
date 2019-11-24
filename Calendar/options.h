@@ -5,6 +5,7 @@
 #include <ctime>
 #include <map>
 
+//Stores the event determined by user.
 struct event
 {
 	int time;

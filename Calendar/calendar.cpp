@@ -1,9 +1,12 @@
 #include "calendar.h"
 #include "options.h"
 
+//Vectors to stores variables. Days of the week, Months of the year and the number of days in each month. 
 std::vector<std::string> days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 std::vector<std::string> months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
 std::vector<int> daysInMonths = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+//Function to print calendar. 
 void calendarPrint(int month, int year)
 {
 	int daysInMonth = daysInMonths[month-1];
@@ -16,7 +19,7 @@ void calendarPrint(int month, int year)
 	int firstDay = (y + y / 4 - y / 100 +
 		y / 400 + t[m - 1] + d) % 7;
 	firstDay = 1 - firstDay;
-	std::cout << months[month-1] << "\n";
+	std::cout << months[month-1] << " " << year << "\n";
 
 	for (int i = 0;i < 7 * 10;i++)
 	{
