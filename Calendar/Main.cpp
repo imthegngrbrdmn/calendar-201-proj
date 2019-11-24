@@ -46,7 +46,7 @@ int main(int argc, char** argv)
 			listEvents(events);
 		}
 
-		else if (input == "EventRange") //Double print bug
+		else if (input == "EventRange") 
 		{
 			std::cout << "What day would you like to begin on? (dd/mm/yyyy)";
 			std::cin >> date;
@@ -57,7 +57,7 @@ int main(int argc, char** argv)
 			eventRange(events, beginDate, endDate);
 		}
 
-		else if (input == "Weekday") //Double print bug
+		else if (input == "Weekday") 
 		{
 			std::cout << "Enter a date: (Format: dd/mm/yyyy): " << "\n";
 			std::cin >> date;
