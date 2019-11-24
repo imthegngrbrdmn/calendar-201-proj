@@ -1,31 +1,29 @@
 #include"options.h"
 #include"calendar.h"
 
-int day = 0;
-int month = 0;
-int year = 0;
 
 int main(int argc, char** argv)
 {
 	calendarPrint(1, 2028, 31);
 
 	std::string input;
-
-	std::vector<std::string> helpList;
-	help(helpList);
+	std::string date;
+	std::vector<std::string> helpList = { "Help","AddEvent","ListEvents","EventRange","Weekday","Quit" };
+	std::map<int, event> events;	//keys are stored as yyyymmdd
+	
 	std::cout << "Here are your options: \n";
-
-	for(std::string str : helpList)
-	{
-		std::cout << str << "\n";
-	}
+	help(helpList);
 
 	while(true)
 	{
 		std::cout << "What would you like to do? \n";
 		std::getline(std::cin, input);
-
-		if (input == "ListEvents")
+		
+		if (input == "AddEvent")
+		{
+			addEvent(events);
+		}
+		else if (input == "ListEvents")
 		{
 			//listEvents();
 		}
@@ -36,11 +34,13 @@ int main(int argc, char** argv)
 		else if (input == "Weekday")
 		{
 			std::cout << "Enter a date: (Format: dd/mm/yyyy): " << "\n";
-			std::cin >> day;
-			std::cin >> month;
-			std::cin >> year;
+			std::cin >> date;
 
-			std::cout << "Day is: " << Weekday(day, month, year) << "\n";
+			std::cout << "Day is: " << Weekday(date) << "\n";
+		}
+		else if (input == "Help")
+		{
+			help(helpList);
 		}
 		else if (input == "Quit")
 		{
@@ -48,11 +48,5 @@ int main(int argc, char** argv)
 			break;
 		}
 	}
-	return 0;
-
-
-	//std::cout << Weekday(day, month, year);
-	//calendarPrint(1,2028,31);
-
 	return 0;
 }

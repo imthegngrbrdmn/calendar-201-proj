@@ -1,25 +1,56 @@
 #include"options.h"
 
+void addEvent(std::map<int,event>& events)
+{
+	int date,int time, std::string name;
+	std::cout<<"What is the date you would like to add an event on? (in yyyymmdd format)\n";
+	std::cin>>date;
+	std::cout<<"What is the time of the event? (in hhmm format)\n";
+	std::cin>>time;
+	std::cout<<"What is the event?\n";
+	std::cin>>name;
+	events[date]=event(time,name);
 void help(std::vector<std::string>& optionlist)
 {
-	optionlist.push_back("Help");
-	optionlist.push_back("ListEvents");
-	optionlist.push_back("EventRange -begin_end");
-	optionlist.push_back("Weekday");
+	for (std::string str : optionlist)
+	{
+		std::cout << str << "\n";
+	}
 }
 
-void listEvents(std::vector<event>& events)
+void listEvents(std::map<int,event>& events)
 {
-	//FIX ME: make me do stuff
+	int year; int month; int day;
+	for (auto eve : events)
+	{
+		int date=eve.first;
+		year=date/10000;
+		month(date/100)%100;
+		day=date%100;
+		std::cout << month << "/" << day << "/" << year << "\t" << eve.second.time << "\t" << eve.second.title << "\n";
+	}
 }
 
-void eventRange(std::vector<event>& events, int beginDate, int endDate)
+void eventRange(std::map<int,event>& events, int beginDate, int endDate)
 {
-	//FIX ME: make me do stuff
+	for (auto eve: events)
+	{
+		if(eve.first>=beginDate&&eve.first<=endDate)
+		{
+			int date=eve.first;
+			year=date/10000;
+			month(date/100)%100;
+			day=date%100;
+			std::cout << month << "/" << day << "/" << year << "\t" << eve.second.time << "\t" << eve.second.title << "\n";
+		}
+	}
 }
 
-std::string Weekday(int d, int m, int y) //Tomohiko Sakamoto's Algorithm to calculate the day of the week from a given date. 
+std::string Weekday(std::string date) //Tomohiko Sakamoto's Algorithm to calculate the day of the week from a given date. 
 {
+	int y = stoi(date.substr(6, 10));
+	int m = stoi(date.substr(3, 5));
+	int d = stoi(date.substr(0, 2));
 	int t[] = { 0, 3, 2, 5, 0, 3,
 			    5, 1, 4, 6, 2, 4 };
 	y -= m < 3;
