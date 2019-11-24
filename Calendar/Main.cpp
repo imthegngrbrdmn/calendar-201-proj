@@ -13,7 +13,7 @@ int main(int argc, char** argv)
 	calendarPrint(month, year);
 
 	std::string input;
-	std::vector<std::string> helpList = { "Help","AddEvent","ListEvents","EventRange","Weekday","Quit" };
+	std::vector<std::string> helpList = { "Help","CalendarPrint","AddEvent","ListEvents","EventRange","Weekday","Quit" };
 	std::map<int, event> events;	//keys are stored as yyyymmdd
 	std::string date;
 
@@ -29,6 +29,14 @@ int main(int argc, char** argv)
 		if (input == "AddEvent")
 		{
 			addEvent(events);
+		}
+		else if (input == "CalendarPrint")
+		{
+			std::cout << "What month would you like printed? ";
+			std::cin >> month;
+			std::cout << "What year would you like printed? ";
+			std::cin >> year;
+			calendarPrint(month, year);
 		}
 		else if (input == "ListEvents")
 		{
