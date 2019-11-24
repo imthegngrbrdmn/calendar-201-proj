@@ -1,10 +1,14 @@
 #include "calendar.h"
 #include "options.h"
 
-//Vectors to stores variables. Days of the week, Months of the year and the number of days in each month. 
-std::vector<std::string> days = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
-std::vector<std::string> months = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December" };
-std::vector<int> daysInMonths = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+/*Vectors to stores variables. Days of the week, Months of the year 
+and the number of days in each month.*/ 
+std::vector<std::string> days = {"Sunday", "Monday", "Tuesday", "Wednesday",
+"Thursday", "Friday", "Saturday"};
+std::vector<std::string> months = { "January", "February", "March", "April",
+"May", "June", "July", "August", "September", "October", "November", "December" };
+std::vector<int> daysInMonths = { 31, 28, 31, 30, 31, 30, 31, 31, 30,
+31, 30, 31 };
 
 //Function to print calendar. 
 void calendarPrint(int month, int year)
@@ -58,6 +62,8 @@ void calendarPrint(int month, int year)
 		if (day <= 0 || day > daysInMonth) std::cout << "  "<<"|";
 		if (day > 0 && day < 10) std::cout <<  " "<< day << "|";
 		if (day >= 10 && day <= daysInMonth) std::cout << day << "|";
-		if (i % 7 == 0) std::cout << "\n" << weekFillerLine << "\n" << weekFillerLine << "\n" << weekFillerLine << "\n" << weekFillerLine << "\n" << weekDivider << "\n|";
+		if (i % 7 == 0) std::cout << "\n" << weekFillerLine << "\n" << 
+			weekFillerLine << "\n" << weekFillerLine << "\n" << weekFillerLine
+			<< "\n" << weekDivider << "\n|";
 	}
 }

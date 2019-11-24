@@ -4,9 +4,11 @@
 void addEvent(std::map<int, event>& events)
 {
 	std::string date;int time; std::string name;
-	std::cout << "What is the date you would like to add an event on? (in dd/mm/yyyy format) \n";
+	std::cout << "What is the date you would like to add "
+		"an event on? (in dd/mm/yyyy format) \n";
 	std::cin >> date;
-	int dateInt = stoi(date.substr(0, 2))+ stoi(date.substr(3, 5)) * 100 + stoi(date.substr(6, 10)) * 10000;
+	int dateInt = stoi(date.substr(0, 2))+ stoi(date.substr(3, 5))
+		* 100 + stoi(date.substr(6, 10)) * 10000;
 	std::cout << "What is the time of the event? (in hhmm format) \n";
 	std::cin >> time;
 	std::cout << "What is the event? \n";
@@ -33,7 +35,8 @@ void listEvents(std::map<int,event>& events)
 		year=date/10000;
 		month=(date/100)%100;
 		day=date%100;
-		std::cout << month << "/" << day << "/" << year << "\t" << eve.second.time << "\t" << eve.second.title << "\n";
+		std::cout << month << "/" << day << "/" << year << "\t" 
+			<< eve.second.time << "\t" << eve.second.title << "\n";
 	}
 }
 
@@ -48,12 +51,14 @@ void eventRange(std::map<int,event>& events, int beginDate, int endDate)
 			int year=date/10000;
 			int month=(date/100)%100;
 			int day=date%100;
-			std::cout << month << "/" << day << "/" << year << "\t" << eve.second.time << "\t" << eve.second.title << "\n";
+			std::cout << month << "/" << day << "/" << year << "\t"
+				<< eve.second.time << "\t" << eve.second.title << "\n";
 		}
 	}
 }
 
-//Tomohiko Sakamoto's Algorithm to calculate the day of the week from a given date.
+/*Tomohiko Sakamoto's Algorithm to calculate the day of the
+week from a given date.*/
 std::string Weekday(std::string date) 
 {
 	int y = stoi(date.substr(6, 10));

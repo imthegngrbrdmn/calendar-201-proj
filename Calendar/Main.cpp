@@ -33,7 +33,8 @@ int main(int argc, char** argv)
 		{
 			int month;
 			int year;
-			std::cout << "What month would you like printed? (Number of month e.g. April = 4.)";
+			std::cout << "What month would you like printed?"
+					"(Number of month e.g. April = 4.)";
 			std::cin >> month;
 			std::cout << "What year would you like printed? (Format = yyyy.)";
 			std::cin >> year;
@@ -50,10 +51,12 @@ int main(int argc, char** argv)
 		{
 			std::cout << "What day would you like to begin on? (dd/mm/yyyy)";
 			std::cin >> date;
-			int beginDate = stoi(date.substr(0, 2)) + stoi(date.substr(3, 5)) * 100 + stoi(date.substr(6, 10)) * 10000;
+			int beginDate = stoi(date.substr(0, 2)) + stoi(date.substr(3, 5))
+				* 100 + stoi(date.substr(6, 10)) * 10000;
 			std::cout << "What day would you like to end on? (dd/mm/yyyy)";
 			std::cin >> date;
-			int endDate = stoi(date.substr(0, 2)) + stoi(date.substr(3, 5)) * 100 + stoi(date.substr(6, 10)) * 10000;
+			int endDate = stoi(date.substr(0, 2)) + stoi(date.substr(3, 5))
+				* 100 + stoi(date.substr(6, 10)) * 10000;
 			eventRange(events, beginDate, endDate);
 		}
 
