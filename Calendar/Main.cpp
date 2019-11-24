@@ -4,7 +4,13 @@
 
 int main(int argc, char** argv)
 {
-	//calendarPrint(1, 2028);
+	int month;
+	int year;
+	std::cout << "What month would you like printed? ";
+	std::cin >> month;
+	std::cout << "What year would you like printed? ";
+	std::cin >> year;
+	calendarPrint(month, year);
 
 	std::string input;
 	std::vector<std::string> helpList = { "Help","AddEvent","ListEvents","EventRange","Weekday","Quit" };
